@@ -1,0 +1,32 @@
+classDiagram
+    class Conexion {
+        -instancia: Conexion
+        -conexion: PDO
+        +__construct()
+        +getInstancia(): Conexion
+        +getConexion(): PDO
+    }
+
+    class Empleado {
+        -id: int
+        -nombreCompleto: string
+        -correo: string
+        -contrasenaHash: string
+        -fechaNacimiento: string
+        -salarioEsperado: float
+        +__construct(nombreCompleto: string, correo: string, contrasenaHash: string, fechaNacimiento: string, salarioEsperado: float)
+        +getId(): int
+        +getNombreCompleto(): string
+        +setNombreCompleto(nombreCompleto: string): void
+        +getCorreo(): string
+        +setCorreo(correo: string): void
+        +getContrasenaHash(): string
+        +setContrasenaHash(contrasenaHash: string): void
+        +getFechaNacimiento(): string
+        +setFechaNacimiento(fechaNacimiento: string): void
+        +getSalarioEsperado(): float
+        +setSalarioEsperado(salarioEsperado: float): void
+        +guardar(): bool
+    }
+
+    Empleado --> Conexion : usa
